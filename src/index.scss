@@ -29,11 +29,11 @@ h1 {
 }
 
 h2 {
-  font-weight: 35px;
+  font-size: 35px;
 }
 
 h3 {
-  font-weight: 30px;
+  font-size: 30px;
 }
 
 h1,
@@ -49,4 +49,56 @@ h6 {
 a {
   text-decoration: none;
   color: #333;
+}
+
+
+
+.slides {
+  width: 800px;
+  height: 500px;
+  border:2px solid white;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  background: pink;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  color: white;
+  font-size: 100px;
+  font-family: sans-serif;
+  border: 5px solid white;
+  transition: all .25s;
+  transform: translateX(-200%);
+}
+
+.slide.next + .slide {
+  transform: translateX(200%);
+}
+
+.slide.prev {
+  z-index: 10;
+  transform: translateX(-100%);
+}
+.slide.current {
+  z-index: 10;
+  transform: translateX(0);
+}
+.slide.next {
+  z-index: 10;
+  transform: translateX(100%);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
 }

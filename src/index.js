@@ -64,6 +64,7 @@ function Slider(slider) {
 	// if you need to pass arg to func, use arrow func
 	prevButton.addEventListener("click", () => move("back"))
 	nextButton.addEventListener("click", move)
+
 }
 
 const mySlider = Slider(document.querySelector(".slider"))
